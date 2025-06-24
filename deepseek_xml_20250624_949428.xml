@@ -1,0 +1,126 @@
+<mxfile host="app.diagrams.net" modified="2025-06-24T12:00:00.000Z" agent="Mozilla/5.0" version="22.1.14" type="device">
+  <diagram name="Contract and Invoice Process" id="XIDJ6LbJj4Q7h0GQJ-3W">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Lanes (Departments) -->
+        <mxCell id="lane1" value="Logistics Department" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="600" height="700" />
+        </mxCell>
+        
+        <mxCell id="lane2" value="HR Department" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="600" height="700" />
+        </mxCell>
+        
+        <mxCell id="lane3" value="Finance Department" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="600" height="700" />
+        </mxCell>
+
+        <!-- Start Node -->
+        <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;" vertex="1" parent="lane1">
+          <mxGeometry x="250" y="50" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Logistics Department Steps -->
+        <mxCell id="step1" value="Signed Contract (original) stored" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="200" y="110" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="step2" value="Communication with service providers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="200" y="170" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="step3" value="Receive invoice from provider" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="200" y="230" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="step4" value="Hand out invoice to HR" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="200" y="290" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Decision: Electronic or Original? -->
+        <mxCell id="decision1" value="Electronic or Original?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="200" y="360" width="180" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="option1" value="Send digital form" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="50" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="option2" value="Hand out hard copy + logs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="410" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Decision: Original after digital? -->
+        <mxCell id="decision2" value="Original received after digital?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="200" y="480" width="180" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="option3" value="Send to Finance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="50" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="option4" value="Send to HR for payment" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane1">
+          <mxGeometry x="410" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- HR Department Steps -->
+        <mxCell id="hr1" value="Follow up with logs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane2">
+          <mxGeometry x="200" y="360" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="hr2" value="Verify services in invoice" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane2">
+          <mxGeometry x="200" y="420" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="hr3" value="Prepare RFP in Docusign" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane2">
+          <mxGeometry x="200" y="480" width="180" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="hr4" value="Submit invoice + RFP to Finance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane2">
+          <mxGeometry x="200" y="540" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Finance Department Steps -->
+        <mxCell id="finance1" value="Payment Processing" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lane3">
+          <mxGeometry x="200" y="600" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- End Node -->
+        <mxCell id="end" value="End" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;" vertex="1" parent="lane3">
+          <mxGeometry x="250" y="680" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors -->
+        <mxCell id="conn1" source="start" target="step1" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        <mxCell id="conn2" source="step1" target="step2" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        <mxCell id="conn3" source="step2" target="step3" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        <mxCell id="conn4" source="step3" target="step4" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        <mxCell id="conn5" source="step4" target="decision1" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        
+        <!-- Decision 1 Connectors -->
+        <mxCell id="conn6" source="decision1" target="option1" style="edgeStyle=none;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" />
+        <mxCell id="conn7" source="decision1" target="option2" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" />
+        <mxCell id="conn8" source="option1" target="hr1" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        <mxCell id="conn9" source="option2" target="decision2" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        
+        <!-- Decision 2 Connectors -->
+        <mxCell id="conn10" source="decision2" target="option3" style="edgeStyle=none;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" />
+        <mxCell id="conn11" source="decision2" target="option4" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" />
+        <mxCell id="conn12" source="option3" target="finance1" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        <mxCell id="conn13" source="option4" target="hr1" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        
+        <!-- HR Department Connectors -->
+        <mxCell id="conn14" source="hr1" target="hr2" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        <mxCell id="conn15" source="hr2" target="hr3" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        <mxCell id="conn16" source="hr3" target="hr4" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        <mxCell id="conn17" source="hr4" target="finance1" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+        
+        <!-- Finance to End -->
+        <mxCell id="conn18" source="finance1" target="end" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
